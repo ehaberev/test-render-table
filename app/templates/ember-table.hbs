@@ -1,0 +1,18 @@
+{{page-title "EmberTable"}}
+
+<div>
+  <LinkTo @route="index">Назад</LinkTo>
+</div>
+
+<div>
+  <button {{on "click" this.toggleStartLoading}}>
+    {{#if this.startedLoading}}
+      Остановить загрузку данных
+    {{else}}
+      Начать загрузку данных
+    {{/if}}
+  </button>
+</div>
+
+<EmberTableWrapper @rows={{this.rows}} @click={{this.onClick}}/>
+{{outlet}}
